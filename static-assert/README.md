@@ -16,9 +16,9 @@ Run this in the build directory:
 ```
 $ clang -O3 -S -emit-llvm -o sample.ll ../static-assert/sample.c
 $ opt -load lib/LLVMStaticAssert.so -static-assert -assert-function-names=__assert_fail sample.ll 2>&1 >/dev/null
-Warning: The function `test_unconditionnal` unconditionally fail with:
+Warning: The function `test_unconditionnal` unconditionally fails with:
   tail call void @__assert_fail(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str, i64 0, i64 0)) #2
-Warning: The function `test_branch_but_unconditionnal` unconditionally fail with:
+Warning: The function `test_branch_but_unconditionnal` unconditionally fails with:
   tail call void @__assert_fail(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str, i64 0, i64 0)) #2
   tail call void @__assert_fail(i8* getelementptr inbounds ([11 x i8], [11 x i8]* @.str.1, i64 0, i64 0)) #2
 ```

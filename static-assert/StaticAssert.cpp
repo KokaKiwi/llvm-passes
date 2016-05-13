@@ -111,7 +111,7 @@ namespace {
         bool runOnFunction(Function &F) override {
             StaticAssertVisitor visitor(FunctionNames);
             if (visitor.runOnFunction(F)) {
-                errs() << "Warning: The function `" << F.getName() << "` unconditionally fail with:\n";
+                errs() << "Warning: The function `" << F.getName() << "` unconditionally fails with:\n";
                 for (const CallInst *Call: visitor.Calls) {
                     Call->dump();
                 }
